@@ -54,6 +54,8 @@ namespace OrderManagementSystem.Application.OrderService
 			if (isEnoughQuantity)
 			{
 				order.Status = "done";
+				// send email 
+
 				// Save order
 				unitOfWork.Repository<Order>().Add(order);
 				await unitOfWork.CompleteAsync();
